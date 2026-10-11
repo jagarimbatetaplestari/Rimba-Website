@@ -170,9 +170,9 @@ export function ChroniclesSection() {
                   priority={idx <= 1}
                 />
 
-                {/* Minimalist Chapter Badge Pill on Top Left */}
+                {/* Minimalist Chapter Badge Pill on Top Left (Clean Solid, No Glass) */}
                 <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-20 pointer-events-none">
-                  <span className="px-3 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/20 shadow-sm">
+                  <span className="px-3 py-1 rounded-full bg-black/80 text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/15 shadow-sm">
                     Chapter {story.number} · {story.tag}
                   </span>
                 </div>
