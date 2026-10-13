@@ -95,9 +95,30 @@ export default function PrivacyPolicyPage() {
                 <span>{section.title}</span>
               </h2>
               <div className="flex flex-col gap-2.5 text-xs sm:text-[13px] text-white/80 leading-relaxed font-normal">
-                {section.content.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
+                {section.content.map((paragraph, idx) => {
+                  const bulletMatch = paragraph.match(/^•\s*([^:]+):\s*(.+)$/);
+                  if (bulletMatch) {
+                    const [, label, text] = bulletMatch;
+                    return (
+                      <div key={idx} className="flex items-start gap-2.5 py-0.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] mt-2 shrink-0" />
+                        <p className="leading-relaxed">
+                          <strong className="font-semibold text-white">{label}: </strong>
+                          <span className="text-white/80">{text}</span>
+                        </p>
+                      </div>
+                    );
+                  }
+                  if (paragraph.startsWith("• ")) {
+                    return (
+                      <div key={idx} className="flex items-start gap-2.5 py-0.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#34D399] mt-2 shrink-0" />
+                        <p className="leading-relaxed text-white/80">{paragraph.slice(2)}</p>
+                      </div>
+                    );
+                  }
+                  return <p key={idx}>{paragraph}</p>;
+                })}
               </div>
             </div>
           ))}
