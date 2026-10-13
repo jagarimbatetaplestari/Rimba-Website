@@ -135,9 +135,11 @@ export function FooterSection({ onDownloadClick }: FooterSectionProps) {
           <div>
             © 2026 Rimba Sanctuary. Crafted with reverent stillness for thoughtful minds.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <a href="/privacy" className="hover:text-[#F3ECE2] transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-[#F3ECE2] transition-colors">Terms</a>
+            <a href="/delete-account" className="hover:text-rose-400 text-rose-400/90 transition-colors">Hapus Akun</a>
             <a href="#faq" className="hover:text-[#F3ECE2] transition-colors">FAQ</a>
-            <a href="#story" className="hover:text-[#F3ECE2] transition-colors">Chronicles</a>
             <a href="#download" className="hover:text-[#34D399] text-[#34D399] font-medium transition-colors">Get App</a>
           </div>
         </div>
