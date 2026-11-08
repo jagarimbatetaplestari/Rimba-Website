@@ -9,13 +9,18 @@ import { FaqSection } from '@/components/landing/FaqSection';
 import { CircadianSection } from '@/components/landing/CircadianSection';
 import { FooterSection } from '@/components/landing/FooterSection';
 import { ToastNotification } from '@/components/landing/ToastNotification';
+import { APPLE_APP_STORE_URL } from '@/lib/constants';
 
 export default function RimbaLandingPage() {
   const [downloadToast, setDownloadToast] = useState<string | null>(null);
 
   const handleDownloadClick = (e: React.MouseEvent, store: string) => {
     e.preventDefault();
-    setDownloadToast(`Coming soon on ${store} & Google Play`);
+    if (store === 'App Store') {
+      window.open(APPLE_APP_STORE_URL, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    setDownloadToast(`Coming soon on ${store}`);
     setTimeout(() => {
       setDownloadToast(null);
     }, 3200);

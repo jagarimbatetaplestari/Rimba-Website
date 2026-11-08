@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { APPLE_APP_STORE_URL } from '@/lib/constants';
 
 interface FooterSectionProps {
   onDownloadClick: (e: React.MouseEvent, store: string) => void;
@@ -45,8 +46,9 @@ export function FooterSection({ onDownloadClick }: FooterSectionProps) {
           <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
             {/* Apple App Store */}
             <a
-              href="#download"
-              onClick={(e) => onDownloadClick(e, 'App Store')}
+              href={APPLE_APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl backdrop-blur-3xl bg-white/10 hover:bg-white/20 border border-white/25 shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.4),0_10px_24px_rgba(0,0,0,0.3)] flex items-center gap-3 transition-all active:scale-95 text-[#F3ECE2] cursor-pointer"
             >
               <svg className="w-5 h-5 fill-current text-[#F3ECE2] group-hover:text-[#34D399] transition-colors" viewBox="0 0 24 24">

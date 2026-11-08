@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { APPLE_APP_STORE_URL } from '@/lib/constants';
 
 interface NavbarProps {
-  onDownloadClick: (e: React.MouseEvent, store: string) => void;
+  onDownloadClick?: (e: React.MouseEvent, store: string) => void;
 }
 
 export function Navbar({ onDownloadClick }: NavbarProps) {
@@ -51,8 +52,9 @@ export function Navbar({ onDownloadClick }: NavbarProps) {
 
         {/* CTA: Get Rimba with Liquid Glass */}
         <a
-          href="#download"
-          onClick={(e) => onDownloadClick(e, 'App Store')}
+          href={APPLE_APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-1.5 px-4 py-2 rounded-full backdrop-blur-2xl bg-[#187557]/15 hover:bg-[#187557]/25 text-[#062319] border border-[#187557]/30 text-xs font-bold shadow-[inset_0_1px_1.5px_rgba(255,255,255,0.8)] transition-all active:scale-95 cursor-pointer"
         >
           <span>Get Rimba</span>

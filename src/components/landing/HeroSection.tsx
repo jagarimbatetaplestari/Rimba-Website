@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { APPLE_APP_STORE_URL } from '@/lib/constants';
 
 interface HeroSectionProps {
   onDownloadClick: (e: React.MouseEvent, store: string) => void;
@@ -45,8 +46,9 @@ export function HeroSection({ onDownloadClick }: HeroSectionProps) {
       <div id="download" className="relative z-20 shrink-0 flex flex-wrap items-center justify-center gap-3 sm:gap-4 -mt-5 sm:-mt-8 md:-mt-11 mb-2 sm:mb-3">
         {/* Apple App Store */}
         <a
-          href="#download"
-          onClick={(e) => onDownloadClick(e, 'App Store')}
+          href={APPLE_APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl backdrop-blur-3xl bg-white/65 hover:bg-white/85 border border-white/85 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.95),0_10px_24px_rgba(6,35,25,0.08)] flex items-center gap-2.5 transition-all active:scale-95 text-[#062319] cursor-pointer"
         >
           <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current text-[#062319] group-hover:text-[#187557] transition-colors" viewBox="0 0 24 24">
