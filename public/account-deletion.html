@@ -278,7 +278,7 @@
         <form onsubmit="handleDeletionSubmit(event)">
           <div class="form-group">
             <label for="email-input" id="lbl-email">Alamat Email Akun Rimba Terdaftar *</label>
-            <input type="email" id="email-input" required placeholder="ranger@rimba.app">
+            <input type="email" id="email-input" required placeholder="you@example.com">
           </div>
 
           <div class="form-group">
@@ -300,8 +300,10 @@
       </div>
 
       <div class="footer-links">
-        <a href="/privacy.html" id="link-privacy">Kebijakan Privasi (Privacy Policy)</a>
-        <a href="/" id="link-home">Rimba Sanctuary</a>
+        <a href="/privacy" id="link-privacy">Kebijakan Privasi (Privacy Policy)</a>
+        <a href="/terms" id="link-terms">Ketentuan Layanan (Terms)</a>
+        <a href="mailto:jagarimba.tetaplestari@gmail.com">jagarimba.tetaplestari@gmail.com</a>
+        <a href="https://rimba-website.jagarimba-tetaplestari.workers.dev" id="link-home">Rimba Sanctuary</a>
       </div>
     </div>
   </div>
@@ -347,19 +349,30 @@
     function handleDeletionSubmit(e) {
       e.preventDefault();
       const email = document.getElementById('email-input').value.trim();
+      const reason = document.getElementById('reason-input').value.trim();
       if (!email) return;
+
+      const isId = currentLang === 'id';
+      const subject = encodeURIComponent(
+        isId ? 'Permintaan Penghapusan Akun Rimba: ' + email : 'Rimba Account Deletion Request: ' + email
+      );
+      const body = encodeURIComponent(
+        isId
+          ? 'Halo Tim Dukungan Rimba,\n\nSaya ingin menghapus akun Rimba saya secara permanen untuk alamat email:\n' + email + '\n\nAlasan: ' + (reason || '-') + '\n\nMohon kirimkan langkah verifikasi kepemilikan akun.'
+          : 'Hello Rimba Support Team,\n\nI would like to permanently delete my Rimba account for the following email:\n' + email + '\n\nReason: ' + (reason || '-') + '\n\nPlease reply with the steps to verify account ownership.'
+      );
+      window.location.href = 'mailto:jagarimba.tetaplestari@gmail.com?subject=' + subject + '&body=' + body;
 
       document.getElementById('form-wrapper').style.display = 'none';
       const successBox = document.getElementById('success-wrapper');
       successBox.style.display = 'block';
 
-      const isId = currentLang === 'id';
       document.getElementById('txt-success-title').textContent = isId 
-        ? 'Permintaan Penghapusan Diterima' 
-        : 'Deletion Request Registered';
+        ? 'Draft Email Penghapusan Dibuka' 
+        : 'Deletion Email Draft Opened';
       document.getElementById('txt-success-desc').textContent = isId
-        ? 'Permintaan penghapusan permanen untuk akun "' + email + '" telah tercatat dalam antrean sistem kami. Seluruh data profil, riwayat sesi fokus, dan simpanan pulau awan akan dihapus permanen dalam waktu 24–48 jam.'
-        : 'Your permanent deletion request for "' + email + '" has been registered. All profile data, focus session records, and cloud island saves will be permanently purged within 24–48 hours.';
+        ? 'Silakan kirim email yang terbuka untuk "' + email + '" ke jagarimba.tetaplestari@gmail.com agar kami memverifikasi kepemilikan dan memproses penghapusan dalam 24-48 jam.'
+        : 'Please send the opened email for "' + email + '" to jagarimba.tetaplestari@gmail.com so we can verify account ownership and process deletion within 24-48 hours.';
       document.getElementById('txt-return-home').textContent = isId 
         ? 'Kembali ke Beranda' 
         : 'Return to Homepage';

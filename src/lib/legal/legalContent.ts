@@ -1,6 +1,7 @@
 export interface LegalSection { id: string; title: string; content: string[]; }
 export interface LegalDocument { title: string; lastUpdated: string; summary: string; sections: LegalSection[]; }
 export const SUPPORT_EMAIL = "jagarimba.tetaplestari@gmail.com";
+export const OFFICIAL_WEBSITE_URL = "https://rimba-website.jagarimba-tetaplestari.workers.dev";
 export const LEGAL_CONTENT: Record<'id' | 'en', { privacy: LegalDocument; terms: LegalDocument }> = {
   "id": {
     "privacy": {
@@ -76,7 +77,7 @@ export const LEGAL_CONTENT: Record<'id' | 'en', { privacy: LegalDocument; terms:
           "id": "contact",
           "title": "8. Kontak dan Pembaruan",
           "content": [
-            "Untuk dukungan, privasi, penghapusan akun, atau laporan konten: jagarimba.tetaplestari@gmail.com.",
+            "Untuk dukungan, privasi, penghapusan akun, atau laporan konten: jagarimba.tetaplestari@gmail.com. Situs web resmi: https://rimba-website.jagarimba-tetaplestari.workers.dev.",
             "Kebijakan diperbarui bila praktik data berubah; tanggal terbaru ditampilkan di atas."
           ]
         }
@@ -137,7 +138,7 @@ export const LEGAL_CONTENT: Record<'id' | 'en', { privacy: LegalDocument; terms:
           "id": "contact",
           "title": "7. Kontak dan Perubahan",
           "content": [
-            "Hubungi jagarimba.tetaplestari@gmail.com untuk bantuan, laporan konten atau pertanyaan ketentuan. Perubahan material akan ditampilkan dengan tanggal pembaruan."
+            "Hubungi jagarimba.tetaplestari@gmail.com untuk bantuan, laporan konten atau pertanyaan ketentuan. Situs web resmi: https://rimba-website.jagarimba-tetaplestari.workers.dev. Perubahan material akan ditampilkan dengan tanggal pembaruan."
           ]
         }
       ]
@@ -217,7 +218,7 @@ export const LEGAL_CONTENT: Record<'id' | 'en', { privacy: LegalDocument; terms:
           "id": "contact",
           "title": "8. Contact and Updates",
           "content": [
-            "For support, privacy, account deletion or content reports: jagarimba.tetaplestari@gmail.com.",
+            "For support, privacy, account deletion or content reports: jagarimba.tetaplestari@gmail.com. Official website: https://rimba-website.jagarimba-tetaplestari.workers.dev.",
             "We update this policy when data practices change; the latest date appears above."
           ]
         }
@@ -278,7 +279,7 @@ export const LEGAL_CONTENT: Record<'id' | 'en', { privacy: LegalDocument; terms:
           "id": "contact",
           "title": "7. Contact and Changes",
           "content": [
-            "Contact jagarimba.tetaplestari@gmail.com for support, content reports or questions about these terms. Material changes will be shown with an updated date."
+            "Contact jagarimba.tetaplestari@gmail.com for support, content reports or questions about these terms. Official website: https://rimba-website.jagarimba-tetaplestari.workers.dev. Material changes will be shown with an updated date."
           ]
         }
       ]

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Shield, Calendar, Lock } from "lucide-react";
-import { LEGAL_CONTENT } from "@/lib/legal/legalContent";
+import { LEGAL_CONTENT, OFFICIAL_WEBSITE_URL, SUPPORT_EMAIL } from "@/lib/legal/legalContent";
 
 export default function PrivacyPolicyPage() {
   const [lang, setLang] = useState<"id" | "en">("id");
@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
               ? "Need to permanently delete your account & saved data?"
               : "Ingin menghapus akun & data suaka Anda secara permanen?"}
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/delete-account"
               className="text-rose-400 hover:text-rose-300 font-semibold underline underline-offset-4"
@@ -145,6 +145,20 @@ export default function PrivacyPolicyPage() {
             >
               {lang === "en" ? "Terms of Service" : "Ketentuan Layanan"}
             </Link>
+            <span>·</span>
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="text-[#34D399] hover:underline underline-offset-4"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+            <span>·</span>
+            <a
+              href={OFFICIAL_WEBSITE_URL}
+              className="text-white/75 hover:text-white underline underline-offset-4"
+            >
+              {OFFICIAL_WEBSITE_URL}
+            </a>
           </div>
         </div>
       </main>

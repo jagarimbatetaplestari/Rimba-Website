@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, FileText, Calendar, Scale } from "lucide-react";
-import { LEGAL_CONTENT } from "@/lib/legal/legalContent";
+import { LEGAL_CONTENT, OFFICIAL_WEBSITE_URL, SUPPORT_EMAIL } from "@/lib/legal/legalContent";
 
 export default function TermsOfServicePage() {
   const [lang, setLang] = useState<"id" | "en">("id");
@@ -126,7 +126,7 @@ export default function TermsOfServicePage() {
 
         {/* Footer Navigation */}
         <div className="p-6 rounded-[24px] bg-white/[0.02] border border-white/5 text-center text-xs text-white/50 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/privacy"
               className="text-[#34D399] hover:underline underline-offset-4"
@@ -140,6 +140,20 @@ export default function TermsOfServicePage() {
             >
               {lang === "en" ? "Request Account Deletion" : "Permintaan Hapus Akun"}
             </Link>
+            <span>·</span>
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="text-[#34D399] hover:underline underline-offset-4"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+            <span>·</span>
+            <a
+              href={OFFICIAL_WEBSITE_URL}
+              className="text-white/75 hover:text-white underline underline-offset-4"
+            >
+              {OFFICIAL_WEBSITE_URL}
+            </a>
           </div>
         </div>
       </main>

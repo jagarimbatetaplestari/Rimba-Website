@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ShieldAlert, Mail } from "lucide-react";
-import { SUPPORT_EMAIL } from "@/lib/legal/legalContent";
+import { OFFICIAL_WEBSITE_URL, SUPPORT_EMAIL } from "@/lib/legal/legalContent";
 
 export default function DeleteAccountPublicPage() {
   const [lang, setLang] = useState<"id" | "en">("id");
@@ -36,7 +36,7 @@ export default function DeleteAccountPublicPage() {
           <p className="text-sm leading-relaxed text-white/80">{en ? "Deleting an account does not cancel store subscriptions. Manage or cancel your subscription separately in App Store or Google Play settings." : "Menghapus akun tidak membatalkan langganan toko. Kelola atau batalkan langganan secara terpisah melalui pengaturan App Store atau Google Play."}</p>
           <a className="inline-block text-sm text-emerald-200 underline" href="https://apps.apple.com/account/subscriptions">{en ? "Manage Apple subscriptions" : "Kelola langganan Apple"}</a>
         </section>
-        <footer className="flex justify-center gap-6 text-sm text-emerald-200"><Link href="/privacy">{en ? "Privacy" : "Privasi"}</Link><Link href="/terms">{en ? "Terms" : "Ketentuan"}</Link></footer>
+        <footer className="flex flex-wrap justify-center gap-6 text-sm text-emerald-200"><Link href="/privacy">{en ? "Privacy" : "Privasi"}</Link><Link href="/terms">{en ? "Terms" : "Ketentuan"}</Link><a href={OFFICIAL_WEBSITE_URL}>{en ? "Website" : "Situs Web"}</a></footer>
       </main>
     </div>
   );

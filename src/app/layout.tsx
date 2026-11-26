@@ -20,6 +20,7 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: 'Rimba — 3D Mindful Focus Sanctuary',
   description: 'Cultivate peace of mind and grow a living 3D diorama island through mindful focus sessions.',
+  metadataBase: new URL('https://rimba-website.jagarimba-tetaplestari.workers.dev/'),
   icons: {
     icon: '/logo-web.png',
     apple: '/logo-web.png',

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { APPLE_APP_STORE_URL } from '@/lib/constants';
+import { SUPPORT_EMAIL } from '@/lib/legal/legalContent';
 
 interface FooterSectionProps {
   onDownloadClick: (e: React.MouseEvent, store: string) => void;
@@ -141,8 +142,16 @@ export function FooterSection({ onDownloadClick }: FooterSectionProps) {
             <a href="/privacy" className="hover:text-[#F3ECE2] transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-[#F3ECE2] transition-colors">Terms</a>
             <a href="/delete-account" className="hover:text-rose-400 text-rose-400/90 transition-colors">Hapus Akun</a>
+            <a href={`mailto:${SUPPORT_EMAIL}?subject=Rimba%20Support`} className="hover:text-[#F3ECE2] transition-colors">Support</a>
             <a href="#faq" className="hover:text-[#F3ECE2] transition-colors">FAQ</a>
-            <a href="#download" className="hover:text-[#34D399] text-[#34D399] font-medium transition-colors">Get App</a>
+            <a
+              href={APPLE_APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#34D399] text-[#34D399] font-medium transition-colors"
+            >
+              Get App
+            </a>
           </div>
         </div>
 
